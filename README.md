@@ -1,0 +1,2 @@
+# persofin
+Personal finance application
