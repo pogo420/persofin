@@ -44,3 +44,11 @@ func TestTimeStampDateValueIssue(t *testing.T) {
 		(*t).Fatalf("Issue in parsing timestamp's date part")
 	}
 }
+
+func TestComments(t *testing.T) {
+	// test case for comments object validation
+	var cmm ty.Comment = "Hello world"
+	if cmm != "Hello world" {
+		(*t).Fatalf("Issue in setting comment object")
+	}
+}
