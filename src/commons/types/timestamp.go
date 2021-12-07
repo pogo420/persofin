@@ -13,10 +13,12 @@ func (s *Ts) String() string {
 	// stringer method
 	return string(*s)
 }
+
 func (s *Ts) GetTimeStamp() Ts {
 	// getter
 	return *s
 }
+
 func (s *Ts) GetDate() string {
 	// extract date logic
 	ts, error := time.Parse(TIME_FORMAT, string(*s))
