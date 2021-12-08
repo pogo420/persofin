@@ -46,8 +46,24 @@ func TestTimeStampDateValueIssue(t *testing.T) {
 }
 
 func TestComments(t *testing.T) {
-	// test case for comments object validation
+	// test case for Comments object validation
 	var cmm ty.Comment = "Hello world"
+	if cmm != "Hello world" {
+		(*t).Fatalf("Issue in setting comment object")
+	}
+}
+
+func TestCommand(t *testing.T) {
+	// test case for Command object validation
+	var cmm ty.Command = "Hello world"
+	if cmm != "Hello world" {
+		(*t).Fatalf("Issue in setting comment object")
+	}
+}
+
+func TestResponse(t *testing.T) {
+	// test case for Response object validation
+	var cmm ty.Response = "Hello world"
 	if cmm != "Hello world" {
 		(*t).Fatalf("Issue in setting comment object")
 	}
