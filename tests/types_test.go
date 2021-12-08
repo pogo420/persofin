@@ -57,7 +57,7 @@ func TestCommand(t *testing.T) {
 	// test case for Command object validation
 	var cmm ty.Command = "Hello world"
 	if cmm != "Hello world" {
-		(*t).Fatalf("Issue in setting comment object")
+		(*t).Fatalf("Issue in setting command object")
 	}
 }
 
@@ -65,6 +65,38 @@ func TestResponse(t *testing.T) {
 	// test case for Response object validation
 	var cmm ty.Response = "Hello world"
 	if cmm != "Hello world" {
-		(*t).Fatalf("Issue in setting comment object")
+		(*t).Fatalf("Issue in setting response object")
+	}
+}
+
+func TestCurrency(t *testing.T) {
+	var curr ty.Currency = ty.USD
+	if curr != ty.USD {
+		(*t).Fatalf("Issue in setting currency object")
+	}
+}
+
+func TestAccountValue(t *testing.T) {
+	av := &ty.AccountValue{Value: 23, Currency: ty.USD}
+
+	if (*av).String() != "AccountValue { value: 23, currency: USD}" {
+		(*t).Fatalf("Issue in setting AccountValue object %s", (*av).String())
+	}
+}
+
+func TestTransactionValue(t *testing.T) {
+	tv := &ty.TransactionValue{Value: 23, Currency: ty.USD}
+
+	if (*tv).String() != "TransactionValue { value: 23, currency: USD}" {
+		(*t).Fatalf("Issue in setting TransactionValue object %s", (*tv).String())
+	}
+}
+
+func TestAccount(t *testing.T) {
+	av := &ty.AccountValue{Value: 23, Currency: ty.USD}
+	a := &ty.Account{Value: *av, Name: "Ola"}
+
+	if (*a).String() != "Account { name: Ola, currency: AccountValue { value: 23, currency: USD}}" {
+		(*t).Fatalf("Issue in setting Account object %s", (*a).String())
 	}
 }
