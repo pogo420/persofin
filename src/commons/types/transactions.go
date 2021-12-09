@@ -12,6 +12,10 @@ type Transaction struct {
 }
 
 func (t *Transaction) String() string {
+	// function for string representation of transaction class
+
+	var to_str string
+	var from_str string
 
 	if (*t).To == nil && (*t).From == nil {
 
@@ -19,23 +23,16 @@ func (t *Transaction) String() string {
 
 	} else if (*t).To == nil {
 
-		return fmt.Sprintf("Transaction{ Id: %d , Timestamp: %s, TransactionValue: %s, Comment: %s, To: %s, From: %s}",
-			(*t).Id,
-			(*t).Timestamp.String(),
-			(*t).TransactionValue.String(),
-			(*t).Comment.String(),
-			"To NA",
-			(*t).From.String())
+		to_str = "To NA"
+		from_str = (*t).From.String()
 
 	} else if (*t).From == nil {
 
-		return fmt.Sprintf("Transaction{ Id: %d , Timestamp: %s, TransactionValue: %s, Comment: %s, To: %s, From: %s}",
-			(*t).Id,
-			(*t).Timestamp.String(),
-			(*t).TransactionValue.String(),
-			(*t).Comment.String(),
-			(*t).To.String(),
-			"From NA")
+		to_str = (*t).To.String()
+		from_str = "From NA"
+	} else {
+		to_str = (*t).To.String()
+		from_str = (*t).From.String()
 	}
 
 	return fmt.Sprintf("Transaction{ Id: %d , Timestamp: %s, TransactionValue: %s, Comment: %s, To: %s, From: %s}",
@@ -43,6 +40,6 @@ func (t *Transaction) String() string {
 		(*t).Timestamp.String(),
 		(*t).TransactionValue.String(),
 		(*t).Comment.String(),
-		(*t).To.String(),
-		(*t).From.String())
+		to_str,
+		from_str)
 }
