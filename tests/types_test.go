@@ -105,14 +105,28 @@ func TestAccount(t *testing.T) {
 	}
 }
 
-func TestTransaction(t *testing.T) {
+func TestTransaction1(t *testing.T) {
 	// test case for transaction object
 	trans := &ty.Transaction{Id: 32,
 		Timestamp:        "11 Dec 2021 12:42:00",
 		TransactionValue: ty.TransactionValue{Value: 23, Currency: ty.USD},
 		Comment:          "Hello Transaction",
-		To:               ty.Account{Name: "First", Value: ty.AccountValue{Value: 23, Currency: ty.USD}},
-		From:             ty.Account{Name: "Second", Value: ty.AccountValue{Value: 23, Currency: ty.USD}}}
+		To:               &ty.Account{Name: "First", Value: ty.AccountValue{Value: 23, Currency: ty.USD}},
+		From:             &ty.Account{Name: "Second", Value: ty.AccountValue{Value: 23, Currency: ty.USD}}}
+
+	if trans == nil {
+		(*t).Fatalf("Issue in setting currency object %s", (*trans).String())
+	}
+}
+
+func TestTransaction2(t *testing.T) {
+	// test case for transaction object
+	trans := &ty.Transaction{Id: 32,
+		Timestamp:        "11 Dec 2021 12:42:00",
+		TransactionValue: ty.TransactionValue{Value: 23, Currency: ty.USD},
+		Comment:          "Hello Transaction",
+		To:               &ty.Account{Name: "First", Value: ty.AccountValue{Value: 23, Currency: ty.USD}},
+		From:             nil}
 
 	if trans == nil {
 		(*t).Fatalf("Issue in setting currency object %s", (*trans).String())
