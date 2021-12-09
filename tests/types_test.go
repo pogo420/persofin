@@ -105,18 +105,9 @@ func TestAccount(t *testing.T) {
 	}
 }
 
-func TestTransactionType(t *testing.T) {
-	// test case for transaction type check
-	var curr ty.TransactionType = ty.FromAccount
-	if curr != ty.FromAccount {
-		(*t).Fatalf("Issue in setting currency object")
-	}
-}
-
 func TestTransaction(t *testing.T) {
 	// test case for transaction object
 	trans := &ty.Transaction{Id: 32,
-		TransactionType:  ty.ToAccount,
 		Timestamp:        "11 Dec 2021 12:42:00",
 		TransactionValue: ty.TransactionValue{Value: 23, Currency: ty.USD},
 		Comment:          "Hello Transaction",
