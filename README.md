@@ -15,3 +15,7 @@ Personal finance application - go based application
 
 ## status 
 * In progress
+
+## Initalization steps(SQLITE3)
+* set up env variable `export SQLITE_DB=path/to/db`
+* set up databse: from project root execute `bash infrastructure/setup.sh`
