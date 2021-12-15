@@ -4,9 +4,9 @@ import ty "persofin/src/commons/types"
 
 type AccountsManager interface {
 	// interface for all account manager logic
-	createAccount(name string) (ty.Response, error)
-	getBalance(name string) (ty.AccountValue, error)
-	updateBalance(name string, av ty.AccountValue) (ty.Response, error)
-	getAccount(name string) (ty.Account, error)
-	renameAccount(oldName string, newName string) (ty.Response, error)
+	CreateAccount(name string) (ty.Response, error)
+	GetBalance(name string) (ty.AccountValue, error)
+	UpdateBalance(name string, av ty.AccountValue) (ty.Response, error)
+	GetAccount(name string) (ty.Account, error)
+	RenameAccount(oldName string, newName string) (ty.Response, error)
 }
