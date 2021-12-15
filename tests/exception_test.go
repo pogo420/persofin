@@ -15,6 +15,7 @@ func exception_driver() []error {
 		&e.AccountUpdateException{},
 		&e.InsufficientBalanceException{},
 		&e.InvalidCommandExceptions{},
+		&e.DataBaseConnectionException{},
 	}
 	return erros
 }
