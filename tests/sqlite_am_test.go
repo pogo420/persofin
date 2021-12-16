@@ -29,3 +29,7 @@ func TestDbConnectionSanity(t *testing.T) {
 		t.Fatalf("DB connection issues")
 	}
 }
+
+func TestGetAccount(t *testing.T) {
+
+}
