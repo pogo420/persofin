@@ -3,7 +3,6 @@ package accountsManager
 import (
 	"database/sql"
 	"fmt"
-	"os"
 	c "persofin/src/commons/constants"
 	e "persofin/src/commons/exceptions"
 	ty "persofin/src/commons/types"
@@ -15,28 +14,28 @@ type SqlLiteAM struct {
 	connection *sql.DB
 }
 
-func GetSqlLiteAccountManager() (SqlLiteAM, error) {
-	// builder function to generate SqlLiteAM struct
+// func GetSqlLiteAccountManager() (SqlLiteAM, error) {
+// 	// builder function to generate SqlLiteAM struct
 
-	var db_path string = os.Getenv(c.Sqlite_db_env)
+// 	var db_path string = os.Getenv(c.Sqlite_db_env)
 
-	if db_path == "" {
-		message := fmt.Sprintf("environmental variable: %s not set", c.Sqlite_db_env)
-		return SqlLiteAM{}, &e.DataBaseConnectionException{Message: message}
-	}
+// 	if db_path == "" {
+// 		message := fmt.Sprintf("environmental variable: %s not set", c.Sqlite_db_env)
+// 		return SqlLiteAM{}, &e.DataBaseConnectionException{Message: message}
+// 	}
 
-	conn, err := sql.Open(c.Sqlite_driver_name, db_path)
-	if err != nil {
-		message := fmt.Sprintf("Issue in db connection, details: %s", err)
-		return SqlLiteAM{}, &e.DataBaseConnectionException{Message: message}
-	}
-	return SqlLiteAM{connection: conn}, nil
-}
+// 	conn, err := sql.Open(c.Sqlite_driver_name, db_path)
+// 	if err != nil {
+// 		message := fmt.Sprintf("Issue in db connection, details: %s", err)
+// 		return SqlLiteAM{}, &e.DataBaseConnectionException{Message: message}
+// 	}
+// 	return SqlLiteAM{connection: conn}, nil
+// }
 
 func (sam *SqlLiteAM) GetAccount(name string) (ty.Account, error) {
 	// method to get account information
 
-	account_query := fmt.Sprintf("select * from %s where %s=%s", c.Accounts_table, c.Accounts_name_column, name)
+	account_query := fmt.Sprintf("select * from %s where %s=%s", c.ACCOUNTS_TABLE, c.ACCOUNTS_NAME_COLUMN, name)
 	rows, err := sam.connection.Query(account_query)
 
 	if err != nil || rows == nil {
