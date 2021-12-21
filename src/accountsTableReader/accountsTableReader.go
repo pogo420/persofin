@@ -1,10 +1,8 @@
 package accountsTableReader
 
-import (
-	"database/sql"
-)
+import ty "persofin/src/commons/types"
 
 // Interface for Accounts Table reading
 type AccountsTableReader interface {
-	AccountsTableRead(account_name string) (*sql.Row, error)
+	AccountsTableRead(account_name string) (*ty.Account, error)
 }
