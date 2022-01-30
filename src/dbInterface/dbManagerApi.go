@@ -2,6 +2,8 @@ package dbManagerApi
 
 import ty "persofin/src/commons/types"
 
+// interface for core - db connection
+
 type DbManagerApi interface {
 	ReadAccountsTable(string) *ty.Account
 	WriteAccountsTable(*ty.Account) int
