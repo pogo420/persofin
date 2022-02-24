@@ -19,3 +19,8 @@ Personal finance application - go based application
 ## Initalization steps(SQLITE3)
 * set up env variable `export SQLITE_DB=path/to/db`
 * set up databse: from project root execute `bash infrastructure/setup.sh`
+
+## Plan:
+* InterfaceObject: Switch to get interface object w.r.t to db planned
+* Revalidate dummy interface.
+* Start to develop core.
