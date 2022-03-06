@@ -1,4 +1,4 @@
-package dbManagerApi
+package dbInterface
 
 import ty "persofin/src/commons/types"
 
