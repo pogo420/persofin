@@ -21,6 +21,4 @@ Personal finance application - go based application
 * set up databse: from project root execute `bash infrastructure/setup.sh`
 
 ## Plan:
-* InterfaceObject: Switch to get interface object w.r.t to db planned
-* Revalidate dummy interface.
-* Start to develop core.
+* project [tracker]|(https://github.com/pogo420/persofin/projects/1)
