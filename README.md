@@ -21,4 +21,4 @@ Personal finance application - go based application
 * set up databse: from project root execute `bash infrastructure/setup.sh`
 
 ## Plan:
-* project [tracker]|(https://github.com/pogo420/persofin/projects/1)
+* project [tracker](https://github.com/pogo420/persofin/projects/1)
