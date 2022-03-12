@@ -22,3 +22,7 @@ Personal finance application - go based application
 
 ## Plan:
 * project [tracker](https://github.com/pogo420/persofin/projects/1)
+
+## test cases run
+* `go test tests/*.go -v`
+* `go test tests/*.go -v | grep PASS: | wc -l`
