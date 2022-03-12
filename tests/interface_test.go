@@ -7,7 +7,7 @@ import (
 
 func TestDbInterface(t *testing.T) {
 	// sanity for getting interface object
-	var io *di.InterfaceObject = &di.InterfaceObject{Test: true} //TODO: use it for core
+	var io *di.InterfaceObject = &di.InterfaceObject{} //TODO: use it for core
 
 	if (*io).GetInterfaceObject() == nil {
 		t.Fatalf("Issue seen in returning interface")
