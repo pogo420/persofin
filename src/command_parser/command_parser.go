@@ -26,6 +26,7 @@ func listCommand() {
 // Public function to process command
 // for invalid command - retun list of command and function returns 0
 // for exit command bye function returns -1
+// For valid command function retuns 0 or -1 based on success/failure
 func CommandProcessor(input string) int {
 	if !findInCommandList(input) {
 		listCommand()

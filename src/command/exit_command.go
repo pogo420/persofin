@@ -1,6 +1,6 @@
 package command
 
-//TODO UTC
+// Exit command logic
 type ExitCommand struct {
 }
 
