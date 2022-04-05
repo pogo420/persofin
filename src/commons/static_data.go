@@ -12,3 +12,6 @@ const PROMT = "persofin>"
 var Commands = map[string]cm.BaseCommand{
 	"bye": &cm.ExitCommand{},
 }
+
+// env variables
+const TEST_MODE_ENV = "PSF_TEST_MODE" // for persofin test mode

@@ -11,3 +11,6 @@ type AccountName string
 
 // Data type for list of accounts
 type AccountStats map[AccountName]TansactionValue
+
+// Data type for interface version
+type InterfaceVersion string
