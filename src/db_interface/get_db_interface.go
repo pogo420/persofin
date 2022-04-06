@@ -10,7 +10,7 @@ var PROD_INTERFACE BaseDbInterface = &DummyDbInterface{}
 
 // function to check test mode
 func getTestFlag() bool {
-	if os.Getenv(cm.TEST_MODE_ENV) == "1" {
+	if os.Getenv(cm.TEST_MODE_ENV) == cm.TEST_MODE_ENABLED {
 		return true
 	} else {
 		return false

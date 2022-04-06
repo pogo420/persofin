@@ -11,7 +11,7 @@ func main() {
 	for {
 		fmt.Print(cc.PROMT)
 		fmt.Scanln(&input)
-		if cp.CommandProcessor(input) == -1 {
+		if cp.CommandProcessor(input) == cc.FAILURE {
 			break
 		}
 	}
