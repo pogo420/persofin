@@ -17,3 +17,6 @@
 # databases
 **/*.db
 *.db
+
+# log files
+*.log
