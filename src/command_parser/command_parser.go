@@ -30,7 +30,7 @@ func listCommand() {
 func CommandProcessor(input string) int {
 	if !findInCommandList(input) {
 		listCommand()
-	} else if cc.Commands[input].Execute() == -1 { // command is executed and return code is checked
+	} else if cc.Commands[input].Execute(input) == -1 { // command is executed and return code is checked
 		return -1
 	}
 	return 0

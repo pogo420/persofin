@@ -13,6 +13,6 @@ func (ex *ExitCommand) Description() string {
 	return fmt.Sprintf("Command to exit program. Example: %s", cmm.EXIT_COMMAND)
 }
 
-func (ex *ExitCommand) Execute() int {
+func (ex *ExitCommand) Execute(input string) int {
 	return -1
 }
