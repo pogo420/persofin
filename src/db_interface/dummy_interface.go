@@ -8,6 +8,7 @@ import (
 const (
 	VALID_ACC   = "VALID_ACC"
 	INVALID_ACC = "INVALID_ACC"
+	EXISTS_ACC  = "EXISTS_ACC"
 	VERSION     = "Dummy Interface v1"
 )
 
@@ -19,7 +20,7 @@ func (ddi *DummyDbInterface) GetInterfaceVersion() types.InterfaceVersion {
 }
 
 func (ddi *DummyDbInterface) AccountExists(acc types.AccountName) bool {
-	if acc == VALID_ACC {
+	if acc == VALID_ACC || acc == INVALID_ACC {
 		return false
 	} else {
 		return true
