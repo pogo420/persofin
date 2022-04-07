@@ -1,10 +1,6 @@
 // File containing static data
 package commons
 
-import (
-	cm "persofin/src/command"
-)
-
 // promt string
 const PROMT = "persofin>"
 
@@ -14,10 +10,11 @@ const (
 	FAILURE = -1
 )
 
-// All commands to struct mapping
-var Commands = map[string]cm.BaseCommand{
-	"bye": &cm.ExitCommand{},
-}
+// command const string
+const (
+	EXIT_COMMAND           = "bye"
+	CREATE_ACCOUNT_COMMAND = "createacc"
+)
 
 const DEFAULT_LOG_FILE = "psf.log" // persofin default log file
 

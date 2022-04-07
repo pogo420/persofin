@@ -2,7 +2,7 @@ package command_parser
 
 import (
 	"fmt"
-	cc "persofin/src/commons"
+	cc "persofin/src/commons/command_mapper"
 )
 
 // Function to check valid commands
