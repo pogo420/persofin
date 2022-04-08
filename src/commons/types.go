@@ -14,3 +14,12 @@ type AccountStats map[AccountName]TansactionValue
 
 // Data type for interface version
 type InterfaceVersion string
+
+// TODO: transaction support
+// Data type of transaction object
+// type Transaction struct {
+// 	accountName      AccountName
+// 	transactionValue TansactionValue
+// 	data             Date
+// 	comment          string
+// }

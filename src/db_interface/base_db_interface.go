@@ -22,4 +22,6 @@ type BaseDbInterface interface {
 	AddTransaction(types.Date, types.AccountName, types.TansactionValue) int // 0 - success , -1 failure
 	// Account transfer
 	AccountTransaction(types.Date, types.AccountName, types.AccountName, types.TansactionValue) int // 0 - success , -1 failure
+	// TODO: Add transction data support
+	// GetTransaction(types.AccountName, types.Date, types.Date)
 }
