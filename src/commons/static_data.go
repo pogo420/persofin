@@ -14,6 +14,7 @@ const (
 const (
 	EXIT_COMMAND           = "bye"
 	CREATE_ACCOUNT_COMMAND = "createacc"
+	RENAME_ACCOUNT_COMMAND = "renameacc"
 )
 
 const DEFAULT_LOG_FILE = "psf.log" // persofin default log file

@@ -9,4 +9,5 @@ import (
 var Commands = map[string]cm.BaseCommand{
 	co.EXIT_COMMAND:           &cm.ExitCommand{},
 	co.CREATE_ACCOUNT_COMMAND: &cm.CreateAccountCommand{},
+	co.RENAME_ACCOUNT_COMMAND: &cm.RenameAccountCommand{},
 }
