@@ -1,6 +1,10 @@
 package command
 
+import (
+	dbi "persofin/src/db_interface"
+)
+
 type BaseCommand interface {
 	Description() string
-	Execute(string) int
+	Execute(dbi.BaseDbInterface, string) int
 }

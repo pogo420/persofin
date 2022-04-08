@@ -3,6 +3,7 @@ package command_parser
 import (
 	"fmt"
 	cc "persofin/src/commons/command_mapper"
+	dbi "persofin/src/db_interface"
 	"strings"
 )
 
@@ -37,6 +38,11 @@ func listCommand() {
 	}
 }
 
+// Function to get interface object
+func getInterface() dbi.BaseDbInterface {
+	return dbi.GetDbInterface()
+}
+
 // Public function to process command
 // for invalid command - retun list of command and function returns 0
 // for exit command bye function returns -1
@@ -45,7 +51,7 @@ func CommandProcessor(input string) int {
 	command, flags := splitCommandFlag(input)
 	if !findInCommandList(command) {
 		listCommand()
-	} else if cc.Commands[command].Execute(flags) == -1 { // command is executed and return code is checked
+	} else if cc.Commands[command].Execute(getInterface(), flags) == -1 { // command is executed and return code is checked
 		return -1
 	}
 	return 0

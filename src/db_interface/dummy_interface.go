@@ -45,8 +45,8 @@ func (ddi *DummyDbInterface) GetAccountBalance(acc types.AccountName) types.Tans
 
 func (ddi *DummyDbInterface) GetAllAccountsBalance() types.AccountStats {
 	return map[types.AccountName]types.TansactionValue{
-		VALID_ACC:        34,
-		VALID_ACC + "_1": 56,
+		VALID_ACC:  34,
+		EXISTS_ACC: 56,
 	}
 }
 
@@ -57,6 +57,7 @@ func (ddi *DummyDbInterface) RenameAccount(acc1 types.AccountName, acc2 types.Ac
 		return -1
 	}
 }
+
 func (ddi *DummyDbInterface) AddTransaction(d types.Date, acc types.AccountName, val types.TansactionValue) int {
 	if acc == VALID_ACC {
 		return 0

@@ -14,10 +14,7 @@ func (cac *CreateAccountCommand) Description() string {
 	return fmt.Sprintf("Command to create account. Example: %s <acc_name>", cmm.CREATE_ACCOUNT_COMMAND)
 }
 
-func (cac *CreateAccountCommand) Execute(flags string) int {
-	logger.PrintLog(logger.INFO, "Getting db interface")
-	dbInterface := dbi.GetDbInterface() // getting interface
-
+func (cac *CreateAccountCommand) Execute(dbInterface dbi.BaseDbInterface, flags string) int {
 	// Handling account exists case
 	if dbInterface.AccountExists(cmm.AccountName(flags)) {
 		logger.PrintLog(logger.ERROR, "Error in creating account, Account Exists")

@@ -12,7 +12,7 @@ import (
 func TestAccountCreationSuccess(t *testing.T) {
 	os.Setenv(com.TEST_MODE_ENV, com.TEST_MODE_ENABLED)
 	command := &cm.CreateAccountCommand{}
-	response := command.Execute(dbi.VALID_ACC)
+	response := command.Execute(dbi.GetDbInterface(), dbi.VALID_ACC)
 	if response == com.FAILURE {
 		t.Fatal("Issue in create account command")
 	}
@@ -22,7 +22,7 @@ func TestAccountCreationSuccess(t *testing.T) {
 func TestAccountCreationFailureInvalAcc(t *testing.T) {
 	os.Setenv(com.TEST_MODE_ENV, com.TEST_MODE_ENABLED)
 	command := &cm.CreateAccountCommand{}
-	response := command.Execute(dbi.INVALID_ACC)
+	response := command.Execute(dbi.GetDbInterface(), dbi.INVALID_ACC)
 	if response == com.SUCCESS {
 		t.Fatal("Issue in create account command")
 	}
@@ -32,7 +32,7 @@ func TestAccountCreationFailureInvalAcc(t *testing.T) {
 func TestAccountCreationFailureAccExists(t *testing.T) {
 	os.Setenv(com.TEST_MODE_ENV, com.TEST_MODE_ENABLED)
 	command := &cm.CreateAccountCommand{}
-	response := command.Execute(dbi.EXISTS_ACC)
+	response := command.Execute(dbi.GetDbInterface(), dbi.EXISTS_ACC)
 	if response == com.SUCCESS {
 		t.Fatal("Issue in create account command")
 	}
