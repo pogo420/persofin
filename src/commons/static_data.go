@@ -12,9 +12,10 @@ const (
 
 // command const string
 const (
-	EXIT_COMMAND           = "bye"
-	CREATE_ACCOUNT_COMMAND = "createacc"
-	RENAME_ACCOUNT_COMMAND = "renameacc"
+	EXIT_COMMAND            = "bye"
+	CREATE_ACCOUNT_COMMAND  = "createacc"
+	RENAME_ACCOUNT_COMMAND  = "renameacc"
+	ADD_TRANSACTION_COMMAND = "addtrans"
 )
 
 const DEFAULT_LOG_FILE = "psf.log" // persofin default log file
