@@ -18,6 +18,8 @@ const (
 	ADD_TRANSACTION_COMMAND = "addtrans"
 )
 
+const DATE_FORMAT = "2006-01-02" // date format
+
 const DEFAULT_LOG_FILE = "psf.log" // persofin default log file
 
 // env variables
