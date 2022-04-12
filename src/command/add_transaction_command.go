@@ -17,14 +17,16 @@ func (atc *AddTransactionCommand) splitAccounts(flags string) (cmm.Date, cmm.Acc
 
 	splitString := strings.Fields(flags)
 
+	if len(splitString) <= 2 { // invalid flags
+		return "", "", 0
+	}
+
 	// segregating data
 	date_ := cmm.Date(splitString[0])
 	accountName := cmm.AccountName(splitString[1])
 	tranValue, err := strconv.Atoi(splitString[2])
 
 	if err != nil {
-		return "", "", 0
-	} else if len(splitString) <= 2 {
 		return "", "", 0
 	} else {
 		return date_, accountName, cmm.TansactionValue(tranValue)
