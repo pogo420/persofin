@@ -12,10 +12,11 @@ const (
 
 // command const string
 const (
-	EXIT_COMMAND            = "bye"
-	CREATE_ACCOUNT_COMMAND  = "createacc"
-	RENAME_ACCOUNT_COMMAND  = "renameacc"
-	ADD_TRANSACTION_COMMAND = "addtrans"
+	EXIT_COMMAND                = "bye"
+	CREATE_ACCOUNT_COMMAND      = "createacc"
+	RENAME_ACCOUNT_COMMAND      = "renameacc"
+	ADD_TRANSACTION_COMMAND     = "addtrans"
+	ACCOUNT_TRANSACTION_COMMAND = "acctrans"
 )
 
 const DATE_FORMAT = "2006-01-02" // date format
