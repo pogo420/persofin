@@ -6,10 +6,11 @@ import (
 )
 
 const (
-	VALID_ACC   = "VALID_ACC"
-	INVALID_ACC = "INVALID_ACC"
-	EXISTS_ACC  = "EXISTS_ACC"
-	VERSION     = "Dummy Interface v1"
+	VALID_ACC    = "VALID_ACC"
+	INVALID_ACC  = "INVALID_ACC"
+	EXISTS_ACC   = "EXISTS_ACC"
+	EXISTS_ACC_2 = "EXISTS_ACC_2"
+	VERSION      = "Dummy Interface v1"
 )
 
 type DummyDbInterface struct {

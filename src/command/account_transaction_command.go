@@ -53,6 +53,10 @@ func (atc *AccountTransactionCommand) Execute(dbInterface dbi.BaseDbInterface, f
 		logger.PrintLog(logger.ERROR, "Issue in Account Name")
 		return cmm.FAILURE
 
+	} else if accountNameFrom == accountNameTo { // same account transfer
+		logger.PrintLog(logger.ERROR, "From and To account are same..!")
+		return cmm.FAILURE
+
 	} else if !dbInterface.AccountExists(cmm.AccountName(accountNameFrom)) || !dbInterface.AccountExists(cmm.AccountName(accountNameTo)) { // if accounts does not exist
 		logger.PrintLog(logger.ERROR, "Account name does not exist")
 		return cmm.FAILURE
