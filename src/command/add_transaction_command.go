@@ -50,7 +50,7 @@ func (atc *AddTransactionCommand) Execute(dbInterface dbi.BaseDbInterface, flags
 		logger.PrintLog(logger.ERROR, "Issue in Account Name")
 		return cmm.FAILURE
 
-	} else if !dbInterface.AccountExists(cmm.AccountName(flags)) { // if accounts does not exist
+	} else if !dbInterface.AccountExists(cmm.AccountName(accountName)) { // if accounts does not exist
 		logger.PrintLog(logger.ERROR, "Account name does not exist")
 		return cmm.FAILURE
 

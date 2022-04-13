@@ -59,7 +59,7 @@ func (ddi *DummyDbInterface) RenameAccount(acc1 types.AccountName, acc2 types.Ac
 }
 
 func (ddi *DummyDbInterface) AddTransaction(d types.Date, acc types.AccountName, val types.TansactionValue) int {
-	if acc == VALID_ACC {
+	if acc == EXISTS_ACC {
 		return 0
 	} else {
 		return -1
