@@ -63,7 +63,6 @@ func TestAddTransValidTransaction(t *testing.T) {
 	command := &cm.AddTransactionCommand{}
 
 	flag := fmt.Sprintf("%s %s %s", "2022-04-12", dbi.EXISTS_ACC, "4456")
-	fmt.Println(flag)
 	response := command.Execute(dbi.GetDbInterface(), flag)
 	if response == com.FAILURE {
 		t.Fatal("Issue in create account command")
