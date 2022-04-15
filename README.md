@@ -10,8 +10,10 @@ Personal finance application - go based application
 * We need to balance a wrong transaction by its complement transaction.
 * Account balance can not be negative(checks are there).
 
-## status 
-* In progress
+## Adding new command  
+* Implement interface `BaseCommand`
+* Update const group in `static_data.go` with command 
+* Update map `Commands` in `command_parser.go`
 
 ## test cases run
 * `go test tests/*.go -v`

@@ -17,6 +17,7 @@ const (
 	RENAME_ACCOUNT_COMMAND      = "renameacc"
 	ADD_TRANSACTION_COMMAND     = "addtrans"
 	ACCOUNT_TRANSACTION_COMMAND = "acctrans"
+	GET_BALANCE_COMMAND         = "getbal"
 )
 
 const DATE_FORMAT = "2006-01-02" // date format
