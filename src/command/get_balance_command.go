@@ -4,6 +4,7 @@ import (
 	"fmt"
 	cmm "persofin/src/commons"
 	dbi "persofin/src/db_interface"
+	logger "persofin/src/logger"
 )
 
 type GetBalanceCommand struct {
@@ -15,5 +16,16 @@ func (gbc *GetBalanceCommand) Description() string {
 }
 
 func (gbc *GetBalanceCommand) Execute(dbInterface dbi.BaseDbInterface, flags string) int {
-	return cmm.FAILURE
+	logger.PrintLog(logger.INFO, fmt.Sprintf("Executing command: %s", cmm.GET_BALANCE_COMMAND))
+	logger.PrintLog(logger.INFO, "Checking for account exists")
+	// Handling account exists case
+	if !dbInterface.AccountExists(cmm.AccountName(flags)) {
+		logger.PrintLog(logger.ERROR, "Account does not Exists")
+		return cmm.FAILURE
+	}
+
+	balance := dbInterface.GetAccountBalance(cmm.AccountName(flags))
+	logger.PrintLog(logger.INFO, fmt.Sprintf("Account balance of %s is %d", flags, balance))
+	fmt.Printf("%sAccount balance of %s is %d\n", cmm.PROMT, flags, balance)
+	return cmm.SUCCESS
 }
