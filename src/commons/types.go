@@ -1,5 +1,10 @@
 package commons
 
+import (
+	"fmt"
+	"strings"
+)
+
 // data type for transaction amount
 type TansactionValue int
 
@@ -11,6 +16,16 @@ type AccountName string
 
 // Data type for list of accounts
 type AccountStats map[AccountName]TansactionValue
+
+func (ac AccountStats) String() string { // Stringer support for map
+	var temp strings.Builder
+	temp.WriteString("{\n")
+	for k, v := range ac {
+		temp.WriteString(fmt.Sprintf("AccountName:%s Balance:%d\n", k, v))
+	}
+	temp.WriteString("}")
+	return temp.String()
+}
 
 // Data type for interface version
 type InterfaceVersion string

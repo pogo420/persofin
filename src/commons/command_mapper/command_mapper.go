@@ -13,4 +13,5 @@ var Commands = map[string]cm.BaseCommand{
 	co.ADD_TRANSACTION_COMMAND:     &cm.AddTransactionCommand{},
 	co.ACCOUNT_TRANSACTION_COMMAND: &cm.AccountTransactionCommand{},
 	co.GET_BALANCE_COMMAND:         &cm.GetBalanceCommand{},
+	co.GET_ALL_BALANCE_COMMAND:     &cm.GetAllBalanceCommand{},
 }

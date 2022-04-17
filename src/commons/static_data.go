@@ -18,6 +18,7 @@ const (
 	ADD_TRANSACTION_COMMAND     = "addtrans"
 	ACCOUNT_TRANSACTION_COMMAND = "acctrans"
 	GET_BALANCE_COMMAND         = "getbal"
+	GET_ALL_BALANCE_COMMAND     = "getallbal"
 )
 
 const DATE_FORMAT = "2006-01-02" // date format
