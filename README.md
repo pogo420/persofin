@@ -15,6 +15,15 @@ Personal finance application - go based application
 * Update const group in `static_data.go` with command 
 * Update map `Commands` in `command_parser.go`
 
+## Adding new DB/Interface
+* Implement `BaseDbInterface`.
+* Write your logic. Read comments for error status/return types.
+* Update variable `PROD_INTERFACE` with addrerss of new struct(new DB/Iinterface).
+* Chech `DummyDbInterface` for ideas(Used for testing).
+
 ## test cases run
 * `go test tests/*.go -v`
 * `go test tests/*.go -v | grep PASS: | wc -l`
+
+## Improvements
+* Transaction support, getting all transactions.
