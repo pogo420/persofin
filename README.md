@@ -1,3 +1,5 @@
+![build status](https://github.com/github/persofin/actions/workflows/go.yml/badge.svg)
+
 # persofin
 Personal finance application - go based application 
 
