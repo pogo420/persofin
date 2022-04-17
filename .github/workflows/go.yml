@@ -1,4 +1,4 @@
-name: Go
+name: persofin_flow
 
 on:
   push:
